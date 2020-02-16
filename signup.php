@@ -39,6 +39,23 @@ if(ISSET($_POST['submitButton'])) {
 ?>
 <html>
 <head>
+<style>
+body {
+  background-color: rgb(225,210,189);
+}
+h1 {
+	font-family: "Arial Black";
+  text-align: center;
+}
+p {
+	font-family: "Arial Black";
+  text-align: center;
+}
+form{
+	font-family: "Arial Black";
+	text-align:center;
+}
+</style>
 </head>
 <body>
 <h1>This is the Signup Page</h1></br>
