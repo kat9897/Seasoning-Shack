@@ -57,6 +57,6 @@ form{
 	<input type="submit" name="submitButton" value="Login">
 </form>
 <p>Haven't signed up yet? <a href="signup.php">Click Here</a> to sign up.</p>
-<?php if (ISSET($msg)) { echo $msg; } ?>
+<p><?php if (ISSET($msg)) { echo $msg; } ?></p>
 </body>
 </html>
