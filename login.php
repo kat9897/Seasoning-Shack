@@ -31,25 +31,34 @@ if(ISSET($_POST['submitButton'])) {
 <html>
 <head>
 <style>
-body {
-  background-color: rgb(225,210,189);
+*{
+	margin:0;
+	padding: 0;
+	
+	
 }
-h1 {
+.text{
+	color: white;
+	position: absolute;
+	top:40%;
+	left:12%;
+	font-size: 35px;
 	font-family: "Arial Black";
-  text-align: center;
-}
-p {
-	font-family: "Arial Black";
-  text-align: center;
-}
-form{
-	font-family: "Arial Black";
-	text-align:center;
+	}
+.container img{
+	width: 100%;
+	position:absolute;
+	top:0px;
+	left:0px;
+	
 }
 
 </style>
 </head>
 <body></br></br></br></br></br></br></br></br></br>
+<div class = "container">
+	<img src = "login.jpg" width = "100px">
+	<div class = "text">
 <h1>Welcome to the Login Page</h1>
 <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 	Username: <input type="text" name="username"></br></br>
@@ -58,5 +67,7 @@ form{
 </form>
 <p>Haven't signed up yet? <a href="signup.php">Click Here</a> to sign up.</p>
 <p><?php if (ISSET($msg)) { echo $msg; } ?></p>
+</div>
+</div>
 </body>
 </html>
