@@ -49,7 +49,7 @@ form{
 
 </style>
 </head>
-<body>
+<body></br></br></br></br></br></br></br></br></br>
 <h1>Welcome to the Login Page</h1>
 <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 	Username: <input type="text" name="username"></br></br>
