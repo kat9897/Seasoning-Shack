@@ -23,8 +23,6 @@ if(ISSET($_POST['submitButton'])) {
 			echo "<h2>" . $row['name'] . "</h2> ".$row['ingredients'] . " </br>". $row['instructions'];
 			echo "</br>Price: " . $row['price'];
 		}
-
-
 	}
 }
 ?>
