@@ -1,4 +1,9 @@
 <?php
+session_start();
+
+if(!ISSET($_SESSION['username'])) {
+	header("Location:login.php");
+}
 if(ISSET($_POST['submitButton'])) {
 	$search = $_POST['search'];
 	
@@ -16,13 +21,14 @@ if(ISSET($_POST['submitButton'])) {
 		padding: 0;
 	}
 	.rectangle {
-		height: 600;
+		height: 800;
 		width: 500px;
-		background-color: #555;
-		opacity: 0.8;
+		background-image: linear-gradient(brown, black);
+		opacity: 0.9;
 		top: 40%;
 		left: -24%;
 		position: relative;
+		border-radius: 50px;
 	}
 	body {
 		background-image: url('search.jpg');
@@ -68,7 +74,7 @@ if(ISSET($_POST['submitButton'])) {
 <body>
 <div class = "container">
 	<form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-		<a href="logout.php" class="logout"><p name="logout">Logout</p></a>
+		<a href="logout.php" class="logout"><p name="logout" style="position:fixed;">Logout</p></a>
 	</form>
 	<div class = "text">
 	<h1 style="color:rgb(124,15,14)">Search By Name:</h1>
@@ -81,10 +87,12 @@ if(ISSET($_POST['submitButton'])) {
 			if(ISSET($_POST['submitButton'])) {
 				while($row = mysqli_fetch_array($result)) {
 					if(strpos(strtolower($row['name']), strtolower($search)) !== false) {
-						echo "<div class='rectangle'><h1 style='color:rgb(244,15,14)'>" . $row['name'] . 
-						"</h1><h2 style='color:rgb(255,140,14)'>Ingredients</h2></br>".$row['ingredients'] . 
-						" </br><h2 style='color:rgb(255,200,14)'>Instructions</h2></br>". $row['instructions'];
-						echo "</br><h2 style='color:rgb(255,255,14)'>Price: " . $row['price'] . "</h2></div>
+						echo "<div class='rectangle'></br></br><h1 style='color:rgb(255,30,14);opacity:1.0;'>" . $row['name'] . 
+						"</h1><h2 style='color:rgb(255,140,14);opacity:1.0;'>Ingredients</h2></br>".$row['ingredients'] . 
+						" </br><h2 style='color:rgb(255,200,14);opacity:1.0;'>Instructions</h2></br>". $row['instructions'];
+						echo "</br><h2 style='color:rgb(255,255,14);opacity:1.0;'>Price: " . $row['price'] . "</h2></br></br>
+						<h1><a href='paid.php' style='color:rgb(255,255,14);'>Pay Now!</a></h1>
+						</div>
 						</br></br></br></br>";
 					}
 				}

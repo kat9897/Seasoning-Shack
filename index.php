@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if(!ISSET($_SESSION['username'])) {
+	header("Location:login.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -92,7 +99,7 @@
 				font-size: 25px;
 				position: absolute;
 				top:8%;
-				left:72%;
+				left:78%;
 			}
 		</style>
 	</head>
@@ -100,9 +107,8 @@
 	<body>
 		<div class = "container">
 			<img src = "background_main.jpg" width = "100px">
+			<a class="signup" href="search.php"><u>Search</u></a>
 			<a class = "logout" href="logout.php"><u>Logout</u></a>
-			<a class = "login" href="login.php"><u>Login</u></a>
-			<a class = "signup" href="signup.php"><u>Sign up</u></a>
 			<div class = "title">SEASONING SHACK</div>
 		</div>
 		
