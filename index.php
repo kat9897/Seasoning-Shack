@@ -1,11 +1,116 @@
-<?php
-
-?>
+<!DOCTYPE html>
 <html>
-<head>
-</head>
-<body>
-<h1>Welcome to Seasoning Shack!</h1>
-<h3>Brought to you by Katrina Best, Guo Cheng, Yining He, Zixiao Ren, and Mojtaba Shafagh</h3>
-</body>
+	<head>
+		<title>Seasoning Shack</title>
+		
+		<style>
+			*{
+				margin:0;
+				padding: 0;
+			}
+			.container img{
+				width: 100%;
+				height: 100%;
+			}
+			.signin{
+				color: white;
+				font-family: "Arial Black";
+				font-size: 35px;
+				position: absolute;
+				top:5%;
+				left:77%;
+			}
+			.signup{
+				color: white;
+				font-family: "Arial Black";
+				font-size: 35px;
+				position: absolute;
+				top:5%;
+				left:88%;
+			}
+			.title{
+				color: black;
+				font-family: "Arial Black";
+				font-size: 95px;
+				position: absolute;
+				top:50%;
+				left:47%;
+				background-color: white;
+				opacity: 0.7;
+			}
+			.topic{
+				color: white;
+				font-family: "Arial Black";
+				font-size: 35px;
+				position: absolute;
+				top:100%;
+				left:80%;
+			}
+			.phone_num{
+				color: white;
+				font-family: "Arial Black";
+				font-size: 15px;
+				position: absolute;
+				top:107%;
+				left:80%;
+			}
+			.email{
+				color: white;
+				font-family: "Arial Black";
+				font-size: 15px;
+				position: absolute;
+				top:110%;
+				left:80%;
+			}
+			.contributor{
+				color: white;
+				font-family: "Arial Black";
+				font-size: 15px;
+				position: absolute;
+				top:117%;
+				left:80%;
+			}
+			.login{
+				color: white;
+				font-family: "Arial Black";
+				font-size: 25px;
+				position: absolute;
+				top:8%;
+				left:80%;
+			}
+			.signup{
+				color: white;
+				font-family: "Arial Black";
+				font-size: 25px;
+				position: absolute;
+				top:8%;
+				left:87%;
+			}
+			.logout {
+				color: white;
+				font-family: "Arial Black";
+				font-size: 25px;
+				position: absolute;
+				top:8%;
+				left:72%;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class = "container">
+			<img src = "background_main.jpg" width = "100px">
+			<a class = "logout" href="logout.php"><u>Logout</u></a>
+			<a class = "login" href="login.php"><u>Login</u></a>
+			<a class = "signup" href="signup.php"><u>Sign up</u></a>
+			<div class = "title">SEASONING SHACK</div>
+		</div>
+		
+		<div class ="about_us">
+			<div class = "topic">About us</div>
+			<div class = "phone_num">Telephone: 888-888-888</div>
+			<div class ="email">Email: seasoning.shack@mail.ss.com</div>
+			<div class ="contributor">Contributors:<Br>Katrina Best, Mojtaba Khavanin, Guo Cheng<Br>Jeffrey He, Zixiao Ren</div>
+		</div>
+	</body>
 </html>

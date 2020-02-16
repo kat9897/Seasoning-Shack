@@ -6,6 +6,7 @@ if(ISSET($_POST['submitButton'])) {
 	require('dbc.php');
 	$query = "SELECT * FROM `recipes`";
 	$result = mysqli_query($dbc, $query) or DIE("Bad connection to recipes.");
+}
 ?>
 <html>
 <head>
@@ -18,6 +19,7 @@ if(ISSET($_POST['submitButton'])) {
 	<input type="submit" name="submitButton"></br>
 </form>
 <?php
+if(ISSET($_POST['submitButton'])) {
 	while($row = mysqli_fetch_array($result)) {
 		if(strpos(strtolower($row['name']), strtolower($search)) !== false) {
 			echo "<h2>" . $row['name'] . "</h2> ".$row['ingredients'] . " </br>". $row['instructions'];
