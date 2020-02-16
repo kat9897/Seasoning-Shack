@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 16, 2020 at 12:09 PM
+-- Generation Time: Feb 16, 2020 at 12:17 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -21,19 +21,13 @@ SET time_zone = "+00:00";
 --
 -- Database: `seasoningshack`
 --
-CREATE DATABASE IF NOT EXISTS `seasoningshack` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `seasoningshack`;
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `recipes`
 --
--- Creation: Feb 16, 2020 at 08:42 AM
--- Last update: Feb 16, 2020 at 05:16 AM
---
 
-DROP TABLE IF EXISTS `recipes`;
 CREATE TABLE `recipes` (
   `recipe_id` int(11) NOT NULL,
   `name` varchar(60) NOT NULL,
@@ -63,11 +57,7 @@ INSERT INTO `recipes` (`recipe_id`, `name`, `ingredients`, `instructions`, `pric
 --
 -- Table structure for table `users`
 --
--- Creation: Feb 16, 2020 at 02:32 AM
--- Last update: Feb 16, 2020 at 09:53 AM
---
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
