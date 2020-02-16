@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 16, 2020 at 10:26 AM
+-- Generation Time: Feb 16, 2020 at 12:09 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `seasoningshack`
 --
+CREATE DATABASE IF NOT EXISTS `seasoningshack` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `seasoningshack`;
 
 -- --------------------------------------------------------
 
@@ -31,6 +33,7 @@ SET time_zone = "+00:00";
 -- Last update: Feb 16, 2020 at 05:16 AM
 --
 
+DROP TABLE IF EXISTS `recipes`;
 CREATE TABLE `recipes` (
   `recipe_id` int(11) NOT NULL,
   `name` varchar(60) NOT NULL,
@@ -61,9 +64,10 @@ INSERT INTO `recipes` (`recipe_id`, `name`, `ingredients`, `instructions`, `pric
 -- Table structure for table `users`
 --
 -- Creation: Feb 16, 2020 at 02:32 AM
--- Last update: Feb 16, 2020 at 05:34 AM
+-- Last update: Feb 16, 2020 at 09:53 AM
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
@@ -81,7 +85,7 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `address`, `username`, `passwor
 (1, 'Katrina', '', '', 'kat9897', 'Katrina'),
 (2, 'Bob', '', '', 'bob', 'bob'),
 (3, 'Katrina', 'kat@mail.com', 'asdfasdfasfasdfasfasfasfsdfasfasfasfsafadfafsaf', 'sadfasdf123F', 'asdfasdfasfd'),
-(4, 'asdf', 'asdf@gmail.com', 'asdfas</br> asdfasdf, alberta</br>asdfasdf', 'asdfF3', ''),
+(4, 'asdf', 'asdf@gmail.com', 'asdfas</br> asdfasdf, alberta</br>asdfasdf', 'asdfF3', 'aaa'),
 (5, 'asdf', 'asdf@gmail.com', 'asdfas</br> asdfasdf, alberta</br>asdfasdf', 'asdfF3', 'abc123F'),
 (6, 'Katrina Best', 'katrinabest@hotmail.com', 'Military Trail, 402D</br> Scarborough, ontario</br>Canada', 'bestkatrF3', 'abc123F'),
 (7, 'gfhfjhghblbhgh', 'hgvgh@fff.com', '45f hbjhb</br> nnbbn, british columbia</br>Canada', 'Uza97', '12345Kat');
