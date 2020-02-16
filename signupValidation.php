@@ -6,10 +6,13 @@
 	$name = $_POST['name'];
 	
 	if (empty($name)) {
-		$msg = $msg . "</br>No name has been entered. Hello no name";
+		$msg = $msg . "</br>No name has been entered.";
 	}
 	elseif (strlen($name) < 2) {
 		$msg = $msg . "</br>Name must be at least 2 characters long. Sorry: that's just a rule";
+	}
+	elseif (strlen($name) > 30) {
+		$msg = $msg . "</br>Name is way too long. Cannot be longer than 30 characters";
 	}
 	elseif (preg_match("/[0-9]/",$name)) {
 		$msg =  $msg . "</br>Name may not contain numbers unless you are C3PO";
@@ -21,7 +24,6 @@
 		$msg =  $msg . "</br>Name may not contain any special characters";
 	}
 	else {
-		$msg = $msg . "</br>Name is valid";
 		$valid++;
 	}
 	
@@ -41,7 +43,6 @@
 		$msg = $msg . "</br>Email must contain the . symbol and end with a valid domain";
 	}
 	else {
-		$msg = $msg . "</br>Email is valid";
 		$valid++;
 	}
 	
@@ -51,7 +52,7 @@
 	$street = $_POST['street'];
 	
 	if(empty($street)) {
-		$msg = $msg . "</br>Street or road is empty... So you live in a plain?";
+		$msg = $msg . "</br>Street or road is empty... So you live in a plain? How?";
 	}
 	elseif (strlen($street) > 25) {
 		$msg = $msg . "</br>Street or road name is too long or sounds pretty close to being made up hmmmmmm
@@ -115,7 +116,6 @@
 		$msg = $msg . "</br>Username must include at least one capital letter";
 	}
 	else {
-		$msg = $msg . "</br>Username Valid";
 		$valid++;
 	}
 	
@@ -138,7 +138,6 @@
 		$msg =  $msg . "</br>Password must contain at least one capital letter";
 	}
 	else {
-		$msg = $msg . "</br>Password is valid";
 		$valid++;
 	}
 	
@@ -149,7 +148,6 @@
 		$msg = $msg . "</br>Your second password does not match your first";
 	}
 	else {
-		$msg = $msg . "</br>Second password is valid";
 		$valid++;
 	}
 	

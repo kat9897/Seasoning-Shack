@@ -1,19 +1,40 @@
 <?php
+
 $msg = "";
 session_start();
+
 if(ISSET($_POST['submitButton'])) {
+	
+	$uname = $_POST['username'];
 	require('signupValidation.php');
+	
 	if ($actualValid == true) {
 		require('dbc.php');
-		//$query = "INSERT INTO `users` (`user_id`, `name`, `username`, `password`) 
-		//VALUES (NULL, 'Katrina', 'kat9897', 'Katrina');";
-		$query = "SELECT * FROM `users`";
-		$result = mysqli_query($dbc, $query) or DIE("Failed connection to database from signup.");
+		$query1 = "SELECT * FROM `users`";
+		$query2 = "INSERT INTO `users` (`user_id`, `name`, `email`, `address`, `username`, `password`) 
+		VALUES (NULL, '".$_POST['name']."', '".$_POST['email']."', '".$_POST['street'].'</br> '.$_POST['city'].', '.$_POST['province'].
+		'</br>'.$_POST['country']."', '$uname', '".$_POST['password1']."');";
+		$resultCheck = mysqli_query($dbc, $query1) or DIE("Failed connection for check from signup.");
+		$sameCheck = false;
+		while ($row = mysqli_fetch_array($resultCheck)) {
+			if ($row['username'] == $uname) {
+				$sameCheck = true;
+				break;
+			}
+		}
+		if ($sameCheck == false) {
+			$result = mysqli_query($dbc, $query2) or DIE("Failed connection to database from signup.");
+			$_SESSION['username'] = $uname;
+			$_SESSION['name'] = $_POST['name'];
+			header("Location:index.php");
+		}
+		else {
+			$msg = $msg . "</br>That username is already taken.";
+		}
 	}
 	else {
 		$msg = $msg . "</br></br>Just look at the error messages...</br>";
 	}
-	
 }
 ?>
 <html>
@@ -49,9 +70,27 @@ if(ISSET($_POST['submitButton'])) {
 	Confirm Password: <input type="password" name="password2"></br></br>
 	<input type="submit" name="submitButton" value="Sign Up"></br>
 </form>
+<p>Already signed up? <a href="login.php">Click here</a> to login.</p>
 <?php if(ISSET($msg)) { echo $msg; } ?>
 <h2><u>Requirements</u></h2>
-
-<p>Already signed up? <a href="login.php">Click here</a> to login.</p>
+<ul>
+	<li>Name must be between 2 and 30 characters.</li>
+	<li>Name must not contain numbers.</li>
+	<li>Name must not contain any special characters.</li></br>
+	<li>Email must be a valid email.</li>
+	<li>Email must not be greater than 28 characters.</li></br>
+	<li>Street/Road length may not exceed 28 characters or be left empty.</li></br>
+	<li>Town/City length may not exceed 47 characters or be left empty.</li></br>
+	<li>You must select a province/territory.</li></br>
+	<li>Country must be less than 74 characters and not empty.</li></br>
+	<li>Username must be between 2 to 25 characters.</li>
+	<li>Username must include at least 1 number.</li>
+	<li>Username must include at least 1 capital letter.</li></br>
+	<li>Password must be between 7 to 18 characters.</li>
+	<li>Password must contain at least 1 number.</li>
+	<li>Password must contain at least 1 capital letter.</li></br>
+	<li>Second password must match the first.</li>
+</ul>
+</br></br></br>
 </body>
 </html>

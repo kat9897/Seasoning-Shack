@@ -27,7 +27,6 @@ if(ISSET($_POST['submitButton'])) {
 		$msg = "Username or Password is incorrect.";
 	}
 }
-session_destroy(); /////////////////////////////don't forget to destroy!!!!!!! Temporary!!!!
 ?>
 <html>
 <head>
