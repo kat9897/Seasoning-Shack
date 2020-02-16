@@ -53,7 +53,7 @@ form{
 <h1>Welcome to the Login Page</h1>
 <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 	Username: <input type="text" name="username"></br></br>
-	Password: <input type="password" name="password"></br>
+	Password: <input type="password" name="password"></br></br>
 	<input type="submit" name="submitButton" value="Login">
 </form>
 <p>Haven't signed up yet? <a href="signup.php">Click Here</a> to sign up.</p>
