@@ -55,6 +55,11 @@ public class Recipe {
 
     }
 
+    public String getName() {return name;}
+    public Queue<Object[]> getIngredients() {return ingredientList;}
+    public Queue<String> getInstructions() {return instructions;}
+    public File getFile() {return sourceFile;}
+
 
     /*---------------------
     Warning:
