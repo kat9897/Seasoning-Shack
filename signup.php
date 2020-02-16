@@ -40,24 +40,28 @@ if(ISSET($_POST['submitButton'])) {
 <html>
 <head>
 <style>
-body {
-  background-color: rgb(225,210,189);
+*{
+	margin:0;
+	padding: 0;
 }
-h1 {
+.text{
 	font-family: "Arial Black";
+	color: white;
   text-align: center;
+  position: absolute;
+		top:8%;
+		left:25%;
 }
-p {
-	font-family: "Arial Black";
-  text-align: center;
-}
-form{
-	font-family: "Arial Black";
-	text-align:center;
+.container img{
+				width: 100%;
+				height: 210%;
 }
 </style>
 </head>
 <body>
+<div class = "container">
+	<img src = "signup.jpg" width = "100px">
+	<div class = "text">
 <h1>This is the Signup Page</h1></br>
 <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 	Name: <input type="text" name="name"></br></br>
@@ -109,5 +113,7 @@ form{
 	<li>Second password must match the first.</li>
 </ul>
 </br></br></br>
+</div>
+</div>
 </body>
 </html>
