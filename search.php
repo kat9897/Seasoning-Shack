@@ -2,7 +2,7 @@
 session_start();
 
 if(!ISSET($_SESSION['username'])) {
-	header("Location:login.php");
+	header("Location:login.html");
 }
 if(ISSET($_POST['submitButton'])) {
 	$search = $_POST['search'];
