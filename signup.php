@@ -26,7 +26,7 @@ if(ISSET($_POST['submitButton'])) {
 			$result = mysqli_query($dbc, $query2) or DIE("Failed connection to database from signup.");
 			$_SESSION['username'] = $uname;
 			$_SESSION['name'] = $_POST['name'];
-			header("Location:index.php");
+			header("Location:index.html");
 		}
 		else {
 			$msg = $msg . "</br>That username is already taken.";
