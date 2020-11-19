@@ -21,7 +21,7 @@ if(ISSET($_POST['submitButton'])) {
 			if ($pass == $row['password']) {
 				$_SESSION['name'] = $row['name'];
 				$_SESSION['username'] = $row['username'];
-				header("Location:index.php");
+				header("Location:index.html");
 			}
 		}
 		$msg = "Username or Password is incorrect.";
