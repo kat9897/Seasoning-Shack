@@ -2,7 +2,7 @@
 session_start();
 
 if(!ISSET($_SESSION['username'])) {
-	header("Location:login.php");
+	header("Location:login.html");
 }
 ?>
 <html>
@@ -26,6 +26,6 @@ h1 {
 </style>
 </head>
 <body>
-<h1>You have paid! <a style="color:grey;text-align: center;" href="search.php">Click here</a> to go back to search results.</h1>
+<h1>You have paid! <a style="color:grey;text-align: center;" href="search.html">Click here</a> to go back to search results.</h1>
 </body>
 </html>
