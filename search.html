@@ -74,7 +74,7 @@ if(ISSET($_POST['submitButton'])) {
 <body>
 <div class = "container">
 	<form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-		<a href="logout.php" class="logout"><p name="logout" style="position:fixed;">Logout</p></a>
+		<a href="logout.html" class="logout"><p name="logout" style="position:fixed;">Logout</p></a>
 	</form>
 	<div class = "text">
 	<h1 style="color:rgb(124,15,14)">Search By Name:</h1>
@@ -91,7 +91,7 @@ if(ISSET($_POST['submitButton'])) {
 						"</h1><h2 style='color:rgb(255,140,14);opacity:1.0;'>Ingredients</h2></br>".$row['ingredients'] . 
 						" </br><h2 style='color:rgb(255,200,14);opacity:1.0;'>Instructions</h2></br>". $row['instructions'];
 						echo "</br><h2 style='color:rgb(255,255,14);opacity:1.0;'>Price: " . $row['price'] . "</h2></br></br>
-						<h1><a href='paid.php' style='color:rgb(255,255,14);'>Pay Now!</a></h1>
+						<h1><a href='paid.html' style='color:rgb(255,255,14);'>Pay Now!</a></h1>
 						</div>
 						</br></br></br></br>";
 					}
