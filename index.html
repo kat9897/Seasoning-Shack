@@ -2,7 +2,7 @@
 session_start();
 
 if(!ISSET($_SESSION['username'])) {
-	header("Location:login.php");
+	header("Location:login.html");
 }
 ?>
 <!DOCTYPE html>
@@ -107,8 +107,8 @@ if(!ISSET($_SESSION['username'])) {
 	<body>
 		<div class = "container">
 			<img src = "background_main.jpg" width = "100px">
-			<a class="signup" href="search.php"><u>Search</u></a>
-			<a class = "logout" href="logout.php"><u>Logout</u></a>
+			<a class="signup" href="search.html"><u>Search</u></a>
+			<a class = "logout" href="logout.html"><u>Logout</u></a>
 			<div class = "title">SEASONING SHACK</div>
 		</div>
 		
@@ -116,7 +116,7 @@ if(!ISSET($_SESSION['username'])) {
 			<div class = "topic">About us</div>
 			<div class = "phone_num">Telephone: 888-888-888</div>
 			<div class ="email">Email: seasoning.shack@mail.ss.com</div>
-			<div class ="contributor">Contributors:<Br>Katrina Best, Mojtaba Khavanin, Guo Cheng<Br>Jeffrey He, Zixiao Ren</div>
+			<div class ="contributor">Contributors:<Br>Katrina Best, Mojtaba Khavanin, Guo Cheng, Jeffrey He, Zixiao Ren<Br></div>
 		</div>
 	</body>
 </html>
